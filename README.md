@@ -1,5 +1,5 @@
 # BudgetTracker
-
+![Logo](./public/img/logowbackground.png)
 
 A budget tracker that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online.
 
@@ -9,6 +9,7 @@ A budget tracker that can be used both online and offline. If entries are record
 ## Description
 
 
+![Screenshot](./public/img/screenshot.png)
 
 ## User Story
  
