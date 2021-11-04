@@ -1,6 +1,8 @@
 # BudgetTracker
-![Logo](./public/img/logowbackground.png)
 
+<p align="center">
+  <img src="./public/img/logowbackground.png" />
+</p>
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
