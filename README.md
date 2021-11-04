@@ -39,15 +39,13 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Technologies
 
-Languages: Node.js, HTML, CSS
+**Languages:** Node.js, HTML, CSS
 
-Databases: Robo 3T, MongoDB Atlas
+**Database:** Robo 3T, MongoDB Atlas
 
-Dependencies: Mongoose, Express, Morgan
+**Dependencies:** Mongoose, Express, Morgan, lite-server
 
-Version Control: GitHub
-
-Cloud Platform: Heroku
+**Cloud Platform:** Heroku
 
 ## Usage
 
