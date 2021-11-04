@@ -52,7 +52,7 @@ Deployed site on heroku: https://budgettracker-offline.herokuapp.com/
 
 ## Installation
 
-To download this application from your smartphone, you may click the ``Share``` button in your browser and then choose the ```Add to Home Screen``` option.
+To download this application from your smartphone, you may click the ```Share``` button in your browser and then choose the ```Add to Home Screen``` option.
 
 
 ## License
