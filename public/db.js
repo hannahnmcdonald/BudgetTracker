@@ -4,10 +4,10 @@ let db;
 const request = indexedDB.open("budget", 1);
 
 request.onupgradeneeded = function(event) {
-    // Create object store titled "pending"
+    // Create object store titled "pendingTransactions"
    const db = event.target.result;
     // Set Auto-increment to true
-   db.createObjectStore("pending", { autoIncrement: true });
+   db.createObjectStore("pendingTransactions", { autoIncrement: true });
  };
 
 request.onsuccess = function(event) {
@@ -25,19 +25,19 @@ request.onerror = function(event) {
 };
 
 function saveRecord(record) {
-    // Transaction created on pending db with readwrite access
-  const transaction = db.transaction(["pending"], "readwrite");
-    // Access to the pending store here
-  const store = transaction.objectStore("pending");
+    // Transaction created on pendingTransactions db with readwrite access
+  const transaction = db.transaction(["pendingTransactions"], "readwrite");
+    // Access to the pendingTransactions store here
+  const store = transaction.objectStore("pendingTransactions");
     // Add record
   store.add(record);
 }
 
 function checkDatabase() {
-    // Open transaction on pending db
-  const transaction = db.transaction(["pending"], "readwrite");
-    // access the pending store
-  const store = transaction.objectStore("pending");
+    // Open transaction on pendingTransactions db
+  const transaction = db.transaction(["pendingTransactions"], "readwrite");
+    // access the pendingTransactions store
+  const store = transaction.objectStore("pendingTransactions");
     // get ALL records from the store and set to a variable
   const getAll = store.getAll();
 
@@ -54,11 +54,11 @@ function checkDatabase() {
       })
       .then(response => response.json())
       .then(() => {
-        // if success, opens a transaction on the pending db
-        const transaction = db.transaction(["pending"], "readwrite");
-        // Access pending store
-        const store = transaction.objectStore("pending");
-        // Clear all items in pending store
+        // if success, opens a transaction on the pendingTransactions db
+        const transaction = db.transaction(["pendingTransactions"], "readwrite");
+        // Access pendingTransactions store
+        const store = transaction.objectStore("pendingTransactions");
+        // Clear all items in pendingTransactions store
         store.clear();
       });
     }
