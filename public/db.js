@@ -1,10 +1,3 @@
-// const indexedDB =
-//   window.indexedDB ||
-//   window.mozIndexedDB ||
-//   window.webkitIndexedDB ||
-//   window.msIndexedDB ||
-//   window.shimIndexedDB;
-
 let db;
 
 // Create a new db request for the budget database
@@ -18,7 +11,7 @@ request.onupgradeneeded = function(event) {
  };
 
 request.onsuccess = function(event) {
-  db = event.Accepttarget.result;
+  db = event.target.result;
 
   // checks to see if app is online before retrieving from db
   if (navigator.onLine) {
