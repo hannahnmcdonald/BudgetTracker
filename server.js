@@ -15,12 +15,6 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// TO DO: Set up DB with Heroku Key/Mongo Atlas
-// mongoose.connect("mongodb://localhost/budget", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
 // Connects either to MongoDB Atlas if on heroku site or to the local, if running locally --//
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/budgetdb',
