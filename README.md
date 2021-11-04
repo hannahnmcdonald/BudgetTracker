@@ -1,13 +1,13 @@
 # BudgetTracker
 ![Logo](./public/img/logowbackground.png)
 
-A budget tracker that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online.
-
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
+
+A budget tracker that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online.
 
 ![Screenshot](./public/img/screenshot.png)
 
@@ -39,17 +39,19 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Technologies
 
-* HTML/CSS/JS
-* Mongodb
-* Express
-* Mongoose
-* Morgan
-* Compression
-* Lite-Server
+Languages: Node.js, HTML, CSS
+
+Databases: Robo 3T, MongoDB Atlas
+
+Dependencies: Mongoose, Express, Morgan
+
+Version Control: GitHub
+
+Cloud Platform: Heroku
 
 ## Usage
 
-Deployed site on heroku: 
+Deployed site on heroku: https://budgettracker-offline.herokuapp.com/
 
 
 ## License

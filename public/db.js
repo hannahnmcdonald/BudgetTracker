@@ -1,43 +1,54 @@
-const indexedDB =
-  window.indexedDB ||
-  window.mozIndexedDB ||
-  window.webkitIndexedDB ||
-  window.msIndexedDB ||
-  window.shimIndexedDB;
+// const indexedDB =
+//   window.indexedDB ||
+//   window.mozIndexedDB ||
+//   window.webkitIndexedDB ||
+//   window.msIndexedDB ||
+//   window.shimIndexedDB;
 
 let db;
+
+// Create a new db request for the budget database
 const request = indexedDB.open("budget", 1);
 
-request.onupgradeneeded = ({ target }) => {
-  let db = target.result;
-  db.createObjectStore("pending", { autoIncrement: true });
-};
+request.onupgradeneeded = function(event) {
+    // Create object store titled "pending"
+   const db = event.target.result;
+    // Set Auto-increment to true
+   db.createObjectStore("pending", { autoIncrement: true });
+ };
 
-request.onsuccess = ({ target }) => {
-  db = target.result;
+request.onsuccess = function(event) {
+  db = event.Accepttarget.result;
 
-  // check if app is online before reading from db
+  // checks to see if app is online before retrieving from db
   if (navigator.onLine) {
     checkDatabase();
   }
 };
 
+// Error Message
 request.onerror = function(event) {
-  console.log("Woops! " + event.target.errorCode);
+  console.log("Uh oh, an error has occurred:" + event.target.errorCode);
 };
 
 function saveRecord(record) {
+    // Transaction created on pending db with readwrite access
   const transaction = db.transaction(["pending"], "readwrite");
+    // Access to the pending store here
   const store = transaction.objectStore("pending");
-
+    // Add record
   store.add(record);
 }
 
 function checkDatabase() {
+    // Open transaction on pending db
   const transaction = db.transaction(["pending"], "readwrite");
+    // access the pending store
   const store = transaction.objectStore("pending");
+    // get ALL records from the store and set to a variable
   const getAll = store.getAll();
 
+//   If successful...
   getAll.onsuccess = function() {
     if (getAll.result.length > 0) {
       fetch("/api/transaction/bulk", {
@@ -48,13 +59,13 @@ function checkDatabase() {
           "Content-Type": "application/json"
         }
       })
-      .then(response => {        
-        return response.json();
-      })
+      .then(response => response.json())
       .then(() => {
-        // delete records if successful
+        // if success, opens a transaction on the pending db
         const transaction = db.transaction(["pending"], "readwrite");
+        // Access pending store
         const store = transaction.objectStore("pending");
+        // Clear all items in pending store
         store.clear();
       });
     }
