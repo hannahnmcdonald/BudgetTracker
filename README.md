@@ -1,15 +1,11 @@
 # BudgetTracker
 
-<p align="center">
-  <img src="./public/img/logowbackground.png" />
-</p>
-
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
 
-A budget tracker that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online.
+This budget tracker is a downloadable application that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online. This app is useful for travelers who may have inconsistent network connectivity, who still would like to keep track of their vacation budget.
 
 ![Screenshot](./public/img/screenshot.png)
 
@@ -34,9 +30,10 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Table of Contents
 1. [Technologies](##Technologies)
-2. [Usage](##Usage)
-3. [License](##License)
-4. [Questions](##Questions)
+1. [Usage](##Usage)
+1. [Installation](##Installation)
+1. [License](##License)
+1. [Questions](##Questions)
 
 
 ## Technologies
@@ -52,6 +49,10 @@ THEN that will be shown on the page, and added to their transaction history when
 ## Usage
 
 Deployed site on heroku: https://budgettracker-offline.herokuapp.com/
+
+## Installation
+
+To download this application from your smartphone, you may click the ``Share``` button in your browser and then choose the ```Add to Home Screen``` option.
 
 
 ## License

@@ -26,7 +26,7 @@ mongoose.connect(
   },
 );
 
-// routes
+// Routes
 app.use(require("./routes/api.js"));
 
 // Listening
