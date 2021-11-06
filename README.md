@@ -7,6 +7,9 @@
 
 This budget tracker is a downloadable application that can be used both online and offline. If entries are recorded while user is offline, they will be populated as soon as user is online. This app is useful for travelers who may have inconsistent network connectivity, who still would like to keep track of their vacation budget.
 
+This application stores all transactions in Mongo DB and uses all transactions to create a graph so the user can visualize their spending. This application is also a PWA (Progressive Web App), so it can be downloaded to the home screen of a smart phone, following the instructions [below](##Installation).
+
+
 ![Screenshot](./public/img/screenshot.png)
 
 ## User Story
